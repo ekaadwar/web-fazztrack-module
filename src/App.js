@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import Header from "./sections/Header";
 import Routes from "./sections/Routes";
-import Footer from "./sections/Header";
+import Footer from "./sections/Footer";
 import logo from "./assets/images/logo/logo.png";
 
 function App() {
