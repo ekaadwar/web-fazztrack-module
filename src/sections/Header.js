@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaChevronDown as Down } from "react-icons/fa";
 
 import Container from "../components/Container";
+import Text from "../components/Text";
 
 const ItemWrapper = ({ components = [], spaceX = 0, justify = "center" }) => {
   const array = components;
@@ -17,10 +18,6 @@ const ItemWrapper = ({ components = [], spaceX = 0, justify = "center" }) => {
   );
 };
 
-const ItemText = ({ text = "", color = "black" }) => {
-  return <p className={`text-${color} font-bold  text-sm`}>{text}</p>;
-};
-
 const Button = ({ primary = false, text = "" }) => {
   return (
     <Link
@@ -29,14 +26,14 @@ const Button = ({ primary = false, text = "" }) => {
         primary ? "blue-700" : "white"
       } py-3 px-5 w-full border-${primary ? "0" : "2"} border-gray-300 `}
     >
-      <ItemText color={primary ? "white" : "black"} text={text} />
+      <Text important color={primary ? "white" : "black"} text={text} />
     </Link>
   );
 };
 
 const Header = ({ logo }) => {
   return (
-    <nav className="flex flex-row items-center bg-white shadow-lg shadow-black-500/50 h-20 h-20">
+    <nav className="fixed z-50 w-full flex flex-row items-center bg-white shadow-lg shadow-black-500/50 h-20">
       <Container
         content={
           <ItemWrapper
@@ -52,25 +49,30 @@ const Header = ({ logo }) => {
                   <Link to="#">
                     <ItemWrapper
                       spaceX={3}
-                      components={[<ItemText text="Kelas" />, <Down />]}
+                      components={[<Text important text="Kelas" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
                       spaceX={3}
-                      components={[<ItemText text="Dukungan" />, <Down />]}
+                      components={[
+                        <Text important text="Dukungan" />,
+                        <Down />,
+                      ]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
                       spaceX={3}
-                      components={[<ItemText text="Tentang" />, <Down />]}
+                      components={[<Text important text="Tentang" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
                       spaceX={3}
-                      components={[<ItemText text="Hire Our Graduates" />]}
+                      components={[
+                        <Text important text="Hire Our Graduates" />,
+                      ]}
                     />
                   </Link>,
                 ]}
