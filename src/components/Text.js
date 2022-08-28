@@ -7,6 +7,7 @@ const Text = ({
   secondary = false,
   text = "",
   color = "",
+  component,
 }) => {
   let fontWeight = "light";
   let textColor = "800";
@@ -36,6 +37,7 @@ const Text = ({
       } font-${fontWeight}`}
     >
       {text}
+      {component && component}
     </p>
   );
 };

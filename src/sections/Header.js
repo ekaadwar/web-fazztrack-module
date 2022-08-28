@@ -4,27 +4,15 @@ import { FaChevronDown as Down } from "react-icons/fa";
 
 import Container from "../components/Container";
 import Text from "../components/Text";
-
-const ItemWrapper = ({ components = [], spaceX = 0, justify = "center" }) => {
-  const array = components;
-  return (
-    <div
-      className={`flex flex-row items-center space-x-${spaceX} justify-${justify}`}
-    >
-      {array.map((component, idx) => (
-        <div key={idx}>{component}</div>
-      ))}
-    </div>
-  );
-};
+import ItemWrapper from "../components/ItemWrapper";
 
 const Button = ({ primary = false, text = "" }) => {
   return (
     <Link
       to="#"
-      className={`flex flex-row items-center justify-center rounded-md bg-${
-        primary ? "blue-700" : "white"
-      } py-3 px-5 w-full border-${primary ? "0" : "2"} border-gray-300 `}
+      className={`flex flex-row items-center justify-center rounded-md ${
+        primary ? "bg-blue-800" : "bg-white"
+      } py-3 px-5 w-full ${primary ? "border-0" : "border"} border-gray-300 `}
     >
       <Text important color={primary ? "white" : "black"} text={text} />
     </Link>
@@ -79,11 +67,9 @@ const Header = ({ logo }) => {
               />,
 
               <ItemWrapper
-                spaceX={10}
+                spaceX={"4"}
                 components={[
-                  <div className="mr-2">
-                    <Button text="Masuk" />
-                  </div>,
+                  <Button text="Masuk" />,
                   <Button primary text="Daftar" />,
                 ]}
               />,

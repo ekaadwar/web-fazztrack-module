@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Header logo={logo} />
       <Routes />
-      <Footer />
+      <Footer logo={logo} />
     </Router>
   );
 }

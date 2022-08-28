@@ -8,9 +8,9 @@ const SearchBar = () => {
     <div className="sticky z-40 top-20 bg-white">
       <Container
         content={
-          <div className="flex flex-col justify-center h-40  space-y-5">
+          <div className="flex flex-col justify-center h-40 space-y-5">
             <Text pageTitle text="Jelajahi modulnya dan ubah masa depanmu" />
-            <div className="flex flex-row items-center w-full border-2 rounded-md">
+            <div className="flex flex-row items-center w-full border rounded-md">
               <input
                 className="px-3 py-2 w-full focus:outline-none"
                 placeholder="Mau belajar apa hari ini? Cari topik atau materimu di sini.."
