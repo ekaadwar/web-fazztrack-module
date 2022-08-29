@@ -32,17 +32,17 @@ const Header = ({ logo }) => {
               </Link>,
 
               <ItemWrapper
-                spaceX={6}
+                spaceX="6"
                 components={[
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={3}
+                      spaceX="3"
                       components={[<Text important text="Kelas" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={3}
+                      spaceX={"3"}
                       components={[
                         <Text important text="Dukungan" />,
                         <Down />,
@@ -51,13 +51,13 @@ const Header = ({ logo }) => {
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={3}
+                      spaceX={"3"}
                       components={[<Text important text="Tentang" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={3}
+                      spaceX={"3"}
                       components={[
                         <Text important text="Hire Our Graduates" />,
                       ]}
