@@ -67,7 +67,7 @@ const Header = ({ logo }) => {
               />,
 
               <ItemWrapper
-                spaceX={"4"}
+                spaceX={"3"}
                 components={[
                   <Button text="Masuk" />,
                   <Button primary text="Daftar" />,

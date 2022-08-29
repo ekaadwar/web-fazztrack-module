@@ -71,17 +71,17 @@ const Footer = () => {
                   />,
 
                   <ItemWrapper
-                    spaceX="10"
+                    spaceX="6"
                     components={[
                       <ItemWrapper
-                        spaceX={"4"}
+                        spaceX={"3"}
                         components={[
                           <BsTelephoneFill color="rgb(31 41 55)" />,
                           <Text text="+6281132010888" />,
                         ]}
                       />,
                       <ItemWrapper
-                        spaceX={"4"}
+                        spaceX={"3"}
                         components={[
                           <MdEmail color="rgb(31 41 55)" />,
                           <Text text="hello@fazztrack.com" />,
