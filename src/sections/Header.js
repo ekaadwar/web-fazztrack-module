@@ -14,11 +14,7 @@ const Button = ({ primary = false, text = "" }) => {
         primary ? "bg-blue-800" : "bg-white"
       } py-3 px-5 w-full ${primary ? "border-0" : "border"} border-gray-300 `}
     >
-      <ImportantText
-        important
-        color={primary ? "white" : "black"}
-        text={text}
-      />
+      <ImportantText text={text} />
     </Link>
   );
 };

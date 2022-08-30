@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import modules from "../dummyData/modules";
 import { ItemTitle, MainText, StarText } from "../components/Text";
 import Rating from "../components/Rating";
 import ItemWrapper from "../components/ItemWrapper";
+import { connect } from "react-redux";
+import { getModules } from "../redux/actions/modules";
 
-const Module = () => {
+const Module = (props) => {
+  useEffect(() => {
+    props.getModules().then(() => {
+      console.log(props.modules);
+    });
+  }, []);
   return (
     <section>
       <SearchBar />
@@ -58,4 +65,12 @@ const Module = () => {
   );
 };
 
-export default Module;
+const mapStateToProps = (state) => ({
+  modules: state.modules,
+});
+
+const mapDispatchToProps = {
+  getModules,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Module);

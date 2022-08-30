@@ -16,10 +16,8 @@ const ItemWrapper = ({ components = [], spaceX = 0, justify = "center" }) => {
   } else {
     style += " space-x-1";
   }
-  // const style = `flex flex-row items-center space-x-${spaceX} justify-${justify} w-full`;
   return (
     <div className={style}>
-      {console.log(style)}
       {array.map((component, idx) => (
         <div key={idx}>{component}</div>
       ))}

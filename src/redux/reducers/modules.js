@@ -1,19 +1,20 @@
 const initialState = {
-  data: [],
+  modules: [],
   details: {},
 };
 
 const modules = (state = initialState, action) => {
   switch (action.type) {
-    case "MODULES_GET": {
+    case "GET_MODULES": {
+      console.log(action.payload);
       return {
         ...state,
-        data: action.payload,
+        modules: action.payload,
       };
     }
     default: {
       return {
-        state,
+        ...state,
       };
     }
   }
