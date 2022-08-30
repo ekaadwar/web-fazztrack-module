@@ -19,7 +19,7 @@ const Text = ({
   }
 
   if (itemTitle) {
-    fontWeight = "semibold";
+    // fontWeight = "normal";
     fontSize = "xl";
   }
 
