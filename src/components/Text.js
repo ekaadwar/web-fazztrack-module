@@ -43,3 +43,7 @@ export const ImportantText = ({ text = "" }) => {
 export const MainText = ({ text = "" }) => {
   return <p className="text-gray-700 text-sm">{text}</p>;
 };
+
+export const StarText = ({ text = "" }) => {
+  return <p className="text-orange-600 text-sm font-bold">{text}</p>;
+};

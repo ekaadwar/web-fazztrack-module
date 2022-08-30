@@ -6,7 +6,7 @@ const Rating = ({ star = 0 }) => {
     <div className="flex flex-row">
       {[...Array(star)].map((item, idx) => (
         <div key={idx}>
-          <FaStar color="#ef6807" />
+          <FaStar color="rgb(234 88 12)" />
         </div>
       ))}
     </div>
