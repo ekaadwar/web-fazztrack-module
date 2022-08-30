@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./Container";
-import Text from "./Text";
+import { PageTitle } from "./Text";
 import { BiSearch } from "react-icons/bi";
 
 const SearchBar = () => {
@@ -9,7 +9,10 @@ const SearchBar = () => {
       <Container
         content={
           <div className="flex flex-col justify-center h-40 space-y-5">
-            <Text pageTitle text="Jelajahi modulnya dan ubah masa depanmu" />
+            <PageTitle
+              pageTitle
+              text="Jelajahi modulnya dan ubah masa depanmu"
+            />
             <div className="flex flex-row items-center w-full border rounded-md">
               <input
                 className="px-3 py-2 w-full focus:outline-none"

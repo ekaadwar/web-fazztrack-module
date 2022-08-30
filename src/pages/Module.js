@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import modules from "../dummyData/modules";
-import Text from "../components/Text";
+import { ItemTitle, MainText } from "../components/Text";
 import Rating from "../components/Rating";
 import ItemWrapper from "../components/ItemWrapper";
 
@@ -22,7 +22,7 @@ const Module = () => {
                 <img src={item.banner} alt="Fazztrack Module" />
                 <div className="p-5">
                   <div className="border-b border-gray-300 pb-5">
-                    <Text itemTitle text={item.title} />
+                    <ItemTitle text={item.title} />
                     <ItemWrapper
                       justify="between"
                       components={[
@@ -30,8 +30,8 @@ const Module = () => {
                         <ItemWrapper
                           spaceX="3"
                           components={[
-                            <Text text="Level" />,
-                            <Text text={item.level} />,
+                            <MainText text="Level" />,
+                            <MainText text={item.level} />,
                           ]}
                         />,
                       ]}
@@ -41,8 +41,8 @@ const Module = () => {
                     <ItemWrapper
                       justify="between"
                       components={[
-                        <Text text="Harga Module" />,
-                        <Text text={item.price} />,
+                        <MainText text="Harga Module" />,
+                        <MainText text={item.price} />,
                       ]}
                     />
                   </div>

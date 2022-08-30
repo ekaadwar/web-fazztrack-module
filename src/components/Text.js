@@ -1,6 +1,6 @@
 import React from "react";
 
-const Text = ({
+export const Text = ({
   pageTitle = false,
   itemTitle = false,
   important = false,
@@ -9,37 +9,37 @@ const Text = ({
   color = "",
   component,
 }) => {
-  let fontWeight = "light";
-  let textColor = "800";
-  let fontSize = "sm";
+  let style = "text-red-700";
 
   if (pageTitle) {
-    fontWeight = "semibold";
-    fontSize = "2xl";
-  }
-
-  if (itemTitle) {
-    // fontWeight = "normal";
-    fontSize = "xl";
-  }
-
-  if (important) {
-    fontWeight = "bold";
-  }
-
-  if (secondary) {
-    textColor = "400";
+    style += "font-semibold text-2xl";
+  } else if (itemTitle) {
+    style += "text-xl font-light";
+  } else if (important) {
+    style += "text-sm font-semibold";
+  } else {
+    style += "text-sm font-light";
   }
   return (
-    <p
-      className={`text-${fontSize} text-${
-        color !== "" ? color : `gray-${textColor}`
-      } font-${fontWeight}`}
-    >
+    <p className={style}>
       {text}
       {component && component}
     </p>
   );
 };
 
-export default Text;
+export const PageTitle = ({ text = "" }) => {
+  return <p className="text-gray-900 text-2xl">{text}</p>;
+};
+
+export const ItemTitle = ({ text = "" }) => {
+  return <p className="text-gray-900 text-md">{text}</p>;
+};
+
+export const ImportantText = ({ text = "" }) => {
+  return <p className="text-gray-900 font-bold text-sm">{text}</p>;
+};
+
+export const MainText = ({ text = "" }) => {
+  return <p className="text-gray-700 text-sm">{text}</p>;
+};

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaChevronDown as Down } from "react-icons/fa";
 
 import Container from "../components/Container";
-import Text from "../components/Text";
+import { ImportantText } from "../components/Text";
 import ItemWrapper from "../components/ItemWrapper";
 
 const Button = ({ primary = false, text = "" }) => {
@@ -14,7 +14,11 @@ const Button = ({ primary = false, text = "" }) => {
         primary ? "bg-blue-800" : "bg-white"
       } py-3 px-5 w-full ${primary ? "border-0" : "border"} border-gray-300 `}
     >
-      <Text important color={primary ? "white" : "black"} text={text} />
+      <ImportantText
+        important
+        color={primary ? "white" : "black"}
+        text={text}
+      />
     </Link>
   );
 };
@@ -32,45 +36,43 @@ const Header = ({ logo }) => {
               </Link>,
 
               <ItemWrapper
-                spaceX="6"
+                spaceX="wide"
                 components={[
                   <Link to="#">
                     <ItemWrapper
                       spaceX="3"
-                      components={[<Text important text="Kelas" />, <Down />]}
+                      components={[<ImportantText text="Kelas" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={"3"}
-                      components={[
-                        <Text important text="Dukungan" />,
-                        <Down />,
-                      ]}
+                      spaceX={"narrow"}
+                      components={[<ImportantText text="Dukungan" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={"3"}
-                      components={[<Text important text="Tentang" />, <Down />]}
+                      spaceX={"narrow"}
+                      components={[<ImportantText text="Tentang" />, <Down />]}
                     />
                   </Link>,
                   <Link to="#">
                     <ItemWrapper
-                      spaceX={"3"}
-                      components={[
-                        <Text important text="Hire Our Graduates" />,
-                      ]}
+                      spaceX={"narrow"}
+                      components={[<ImportantText text="Hire Our Graduates" />]}
                     />
                   </Link>,
                 ]}
               />,
 
               <ItemWrapper
-                spaceX={"3"}
+                spaceX={"narrow"}
                 components={[
                   <Button text="Masuk" />,
-                  <Button primary text="Daftar" />,
+                  <Button
+                    primary
+                    text={<p className="text-white">Daftar</p>}
+                  />,
                 ]}
               />,
             ]}
