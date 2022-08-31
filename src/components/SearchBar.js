@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "./Container";
 import { PageTitle } from "./Text";
 import { BiSearch } from "react-icons/bi";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch = "", callback = () => {} }) => {
+  const [onChange, setOnChange] = useState(onSearch);
+
+  const search = (even) => {
+    if (even.keyCode === 13) {
+      callback(onChange);
+      setOnChange("");
+    }
+  };
+
   return (
     <div className="sticky z-40 top-20 bg-white">
       <Container
@@ -15,6 +24,9 @@ const SearchBar = () => {
             />
             <div className="flex flex-row items-center w-full border rounded-md">
               <input
+                value={onChange}
+                onChange={(even) => setOnChange(even.target.value)}
+                onKeyDown={(even) => search(even)}
                 className="px-3 py-2 w-full focus:outline-none"
                 placeholder="Mau belajar apa hari ini? Cari topik atau materimu di sini.."
               />

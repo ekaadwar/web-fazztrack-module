@@ -9,15 +9,20 @@ import { getModules } from "../redux/actions/modules";
 
 const Module = (props) => {
   const [items, setItems] = useState(props.modules.modules);
+  const [onSearch, setOnSearch] = useState("");
 
   useEffect(() => {
     props.getModules().then(() => {
       console.log(props.modules);
     });
   }, []);
+
+  const search = (onSearch) => {
+    props.getModules(onSearch);
+  };
   return (
     <section>
-      <SearchBar />
+      <SearchBar callback={search} />
 
       <Container
         content={
@@ -59,7 +64,6 @@ const Module = (props) => {
                 </div>
               </div>
             ))}
-            <p>oke{console.log(module)}</p>
           </div>
         }
       />
