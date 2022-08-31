@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
-import modules from "../dummyData/modules";
 import { ItemTitle, MainText, StarText } from "../components/Text";
 import Rating from "../components/Rating";
 import ItemWrapper from "../components/ItemWrapper";
@@ -9,6 +8,8 @@ import { connect } from "react-redux";
 import { getModules } from "../redux/actions/modules";
 
 const Module = (props) => {
+  const [items, setItems] = useState(props.modules.modules);
+
   useEffect(() => {
     props.getModules().then(() => {
       console.log(props.modules);
@@ -21,7 +22,7 @@ const Module = (props) => {
       <Container
         content={
           <div className="grid grid-cols-4 bg-gray-100 pt-32 pb-16 gap-6">
-            {modules.data.map((item, idx) => (
+            {props.modules.modules.map((item, idx) => (
               <div
                 key={idx}
                 className="bg-white shadow-lg shadow-black-500/50 rounded-md overflow-hidden"
@@ -58,6 +59,7 @@ const Module = (props) => {
                 </div>
               </div>
             ))}
+            <p>oke{console.log(module)}</p>
           </div>
         }
       />
