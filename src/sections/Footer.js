@@ -8,11 +8,11 @@ import ItemWrapper from "../components/ItemWrapper";
 
 const Footer = () => {
   return (
-    <footer className="h-60 bg-white py-10">
+    <footer className="h-60 bg-white py-10 box-border">
       <Container
         content={
-          <div className="grid grid-cols-6 gap-5">
-            <div className="col-span-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-5">
+            <div className="md:col-span-2">
               <div className="mb-6">
                 <img src={logo} alt="Fazztrack" />
               </div>
@@ -57,41 +57,38 @@ const Footer = () => {
               <MainText text="Youtube" />
             </div>
 
-            <div className="col-span-6 py-5 pb-10 border-t border-gray-300">
-              <ItemWrapper
-                justify="between"
-                components={[
-                  <MainText
-                    text={
-                      <p>
-                        © <span className="font-bold">2022 Fazztrack.</span> All
-                        Rights Reserved
-                      </p>
-                    }
-                  />,
-
-                  <ItemWrapper
-                    spaceX="wide"
-                    components={[
-                      <ItemWrapper
-                        spaceX={"narrow"}
-                        components={[
-                          <BsTelephoneFill color="rgb(31 41 55)" />,
-                          <MainText text="+6281132010888" />,
-                        ]}
-                      />,
-                      <ItemWrapper
-                        spaceX={"narrow"}
-                        components={[
-                          <MdEmail color="rgb(31 41 55)" />,
-                          <MainText text="hello@fazztrack.com" />,
-                        ]}
-                      />,
-                    ]}
-                  />,
-                ]}
-              />
-            </div>
+            {/* <div className="md:col-span-2 lg:col-span-6 py-5 pb-10 border-t border-gray-300">
+              <div className="flex flex-col">
+                <MainText
+                  text={
+                    <p>
+                      © <span className="font-bold">2022 Fazztrack.</span> All
+                      Rights Reserved
+                    </p>
+                  }
+                />
+                <ItemWrapper
+                  spaceX="wide"
+                  components={[
+                    <ItemWrapper
+                      spaceX={"narrow"}
+                      components={[
+                        <BsTelephoneFill color="rgb(31 41 55)" />,
+                        <MainText text="+6281132010888" />,
+                      ]}
+                    />,
+                    <ItemWrapper
+                      spaceX={"narrow"}
+                      components={[
+                        <MdEmail color="rgb(31 41 55)" />,
+                        <MainText text="hello@fazztrack.com" />,
+                      ]}
+                    />,
+                  ]}
+                />
+                ,
+              </div>
+            </div> */}
           </div>
         }
       />

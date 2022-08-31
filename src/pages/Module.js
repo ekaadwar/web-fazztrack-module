@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import { ItemTitle, MainText, StarText } from "../components/Text";
@@ -8,9 +8,6 @@ import { connect } from "react-redux";
 import { getModules } from "../redux/actions/modules";
 
 const Module = (props) => {
-  const [items, setItems] = useState(props.modules.modules);
-  const [onSearch, setOnSearch] = useState("");
-
   useEffect(() => {
     props.getModules().then(() => {
       console.log(props.modules);
@@ -26,7 +23,7 @@ const Module = (props) => {
 
       <Container
         content={
-          <div className="grid grid-cols-4 bg-gray-100 pt-32 pb-16 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 bg-gray-100 pt-32 pb-16 gap-6">
             {props.modules.modules.map((item, idx) => (
               <div
                 key={idx}
